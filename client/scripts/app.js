@@ -19,6 +19,8 @@ var App = {
     App.startSpinner();
     App.fetch(App.stopSpinner);
 
+    setInterval(App.fetch, 2000);
+
     // TODO: Make sure the app loads data from the API
     // continually, instead of just once at the start.
   },
@@ -27,7 +29,7 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       console.log(data);
-
+      //callback();
       // TODO: Use the data to update Messages and Rooms
       // and re-render the corresponding views.
     });
@@ -43,3 +45,5 @@ var App = {
     FormView.setStatus(false);
   }
 };
+
+
